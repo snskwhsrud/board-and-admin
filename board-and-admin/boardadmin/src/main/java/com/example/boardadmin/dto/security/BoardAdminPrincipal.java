@@ -2,7 +2,6 @@ package com.example.boardadmin.dto.security;
 
 import com.example.boardadmin.domain.constant.RoleType;
 import com.example.boardadmin.dto.UserAccountDto;
-import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,11 +22,11 @@ public record BoardAdminPrincipal(
         Map<String, Object> oAuth2Attributes
 ) implements UserDetails, OAuth2User {
 
-    public static BoardAdminPrincipal of(String username, String password,Set<RoleType> roleTypes, String email, String nickname, String memo) {
-        return BoardAdminPrincipal.of(username, password,roleTypes , email, nickname, memo, Map.of());
+    public static BoardAdminPrincipal of(String username, String password, Set<RoleType> roleTypes, String email, String nickname, String memo) {
+        return BoardAdminPrincipal.of(username, password, roleTypes, email, nickname, memo, Map.of());
     }
 
-    public static BoardAdminPrincipal of(String username, String password,Set<RoleType> roleTypes, String email, String nickname, String memo, Map<String, Object> oAuth2Attributes) {
+    public static BoardAdminPrincipal of(String username, String password, Set<RoleType> roleTypes, String email, String nickname, String memo, Map<String, Object> oAuth2Attributes) {
         return new BoardAdminPrincipal(
                 username,
                 password,
@@ -61,7 +60,8 @@ public record BoardAdminPrincipal(
                 authorities.stream()
                         .map(GrantedAuthority::getAuthority)
                         .map(RoleType::valueOf)
-                        .collect(Collectors.toUnmodifiableSet()),
+                        .collect(Collectors.toUnmodifiableSet())
+                ,
                 email,
                 nickname,
                 memo
@@ -80,6 +80,5 @@ public record BoardAdminPrincipal(
 
     @Override public Map<String, Object> getAttributes() { return oAuth2Attributes; }
     @Override public String getName() { return username; }
-
 
 }
