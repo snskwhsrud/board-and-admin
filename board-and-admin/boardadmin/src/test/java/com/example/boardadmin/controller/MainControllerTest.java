@@ -31,7 +31,7 @@ class MainControllerTest {
         mvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("forward:/management/articles"))
-                .andExpect(forwardedUrl("/templates/management/articles"));
+                .andExpect(forwardedUrl("/management/articles"));
     }
 
 }
