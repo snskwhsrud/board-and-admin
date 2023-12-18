@@ -1,11 +1,18 @@
 package com.example.boardadmin.service;
 
+<<<<<<< HEAD
+=======
+import com.example.boardadmin.domain.constant.RoleType;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 import com.example.boardadmin.dto.ArticleCommentDto;
 import com.example.boardadmin.dto.UserAccountDto;
 import com.example.boardadmin.dto.properties.ProjectProperties;
 import com.example.boardadmin.dto.response.ArticleCommentClientResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+<<<<<<< HEAD
 import org.junit.jupiter.api.Disabled;
+=======
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -21,6 +28,10 @@ import org.springframework.test.web.client.MockRestServiceServer;
 
 import java.time.LocalDateTime;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Set;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
@@ -31,7 +42,11 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @DisplayName("비즈니스 로직 - 댓글 관리")
 class ArticleCommentManagementServiceTest {
 
+<<<<<<< HEAD
     @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
+=======
+    //    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
     @DisplayName("실제 API 호출 테스트")
     @SpringBootTest
     @Nested
@@ -116,7 +131,11 @@ class ArticleCommentManagementServiceTest {
             Long articleCommentId = 1L;
             ArticleCommentDto expectedComment = createArticleCommentDto("댓글");
             server
+<<<<<<< HEAD
                     .expect(requestTo(projectProperties.board().url() + "/api/articleComments/" + articleCommentId + "?projection=withUserAccount"))
+=======
+                    .expect(requestTo(projectProperties.board().url() + "/api/articleComments/" + articleCommentId))
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
                     .andRespond(withSuccess(
                             mapper.writeValueAsString(expectedComment),
                             MediaType.APPLICATION_JSON
@@ -170,10 +189,19 @@ class ArticleCommentManagementServiceTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
+<<<<<<< HEAD
+=======
+                "pw",
+                Set.of(RoleType.ADMIN),
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"
         );
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f

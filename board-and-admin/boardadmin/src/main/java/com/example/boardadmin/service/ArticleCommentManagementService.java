@@ -1,6 +1,7 @@
 package com.example.boardadmin.service;
 
 import com.example.boardadmin.dto.ArticleCommentDto;
+<<<<<<< HEAD
 import com.example.boardadmin.dto.properties.ProjectProperties;
 import com.example.boardadmin.dto.response.ArticleCommentClientResponse;
 import lombok.RequiredArgsConstructor;
@@ -12,11 +13,18 @@ import java.net.URI;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+=======
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 
 @RequiredArgsConstructor
 @Service
 public class ArticleCommentManagementService {
 
+<<<<<<< HEAD
     private final RestTemplate restTemplate;
     private final ProjectProperties projectProperties;
 
@@ -49,3 +57,18 @@ public class ArticleCommentManagementService {
     }
 
 }
+=======
+    public List<ArticleCommentDto> getArticleComments() {
+        return List.of();
+    }
+
+    public ArticleCommentDto getArticleComment(Long articleCommentId) {
+        return null;
+    }
+
+    public void deleteArticleComment(Long articleCommentId) {
+
+    }
+
+}
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f

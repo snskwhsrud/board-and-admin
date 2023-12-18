@@ -35,4 +35,8 @@ public record ArticleClientResponse(
             int number
     ) {}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f

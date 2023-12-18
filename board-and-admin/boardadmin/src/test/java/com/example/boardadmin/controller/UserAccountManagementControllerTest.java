@@ -47,9 +47,13 @@ class UserAccountManagementControllerTest {
         mvc.perform(get("/management/user-accounts"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
+<<<<<<< HEAD
                 .andExpect(view().name("management/user-accounts"))
                 .andExpect(model().attribute("userAccounts", List.of()));
         then(userAccountManagementService).should().getUserAccounts();
+=======
+                .andExpect(view().name("management/user-accounts"));
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
     }
 
     @WithMockUser(username = "tester", roles = "USER")

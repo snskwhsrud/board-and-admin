@@ -18,4 +18,8 @@ public record ArticleCommentDto(
         return new ArticleCommentDto(id, articleId, userAccountDto, parentCommentId, content, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f

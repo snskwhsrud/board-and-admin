@@ -1,5 +1,9 @@
 package com.example.boardadmin.service;
 
+<<<<<<< HEAD
+=======
+import com.example.boardadmin.domain.constant.RoleType;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 import com.example.boardadmin.dto.ArticleDto;
 import com.example.boardadmin.dto.UserAccountDto;
 import com.example.boardadmin.dto.properties.ProjectProperties;
@@ -21,6 +25,10 @@ import org.springframework.test.web.client.MockRestServiceServer;
 
 import java.time.LocalDateTime;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Set;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
@@ -31,12 +39,17 @@ import static org.springframework.test.web.client.response.MockRestResponseCreat
 @DisplayName("비즈니스 로직 - 게시글 관리")
 class ArticleManagementServiceTest {
 
+<<<<<<< HEAD
     @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
+=======
+    //    @Disabled("실제 API 호출 결과 관찰용이므로 평상시엔 비활성화")
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
     @DisplayName("실제 API 호출 테스트")
     @SpringBootTest
     @Nested
     class RealApiTest {
 
+<<<<<<< HEAD
     private final ArticleManagementService sut;
 
     @Autowired
@@ -58,6 +71,29 @@ class ArticleManagementServiceTest {
     }
 }
 
+=======
+        private final ArticleManagementService sut;
+
+        @Autowired
+        public RealApiTest(ArticleManagementService sut) {
+            this.sut = sut;
+        }
+
+        @DisplayName("게시글 API를 호출하면, 게시글을 가져온다.")
+        @Test
+        void given_when_then() {
+            // Given
+
+            // When
+            List<ArticleDto> result = sut.getArticles();
+
+            // Then
+            System.out.println(result.stream().findFirst());
+            assertThat(result).isNotNull();
+        }
+    }
+
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
     @DisplayName("API mocking 테스트")
     @EnableConfigurationProperties(ProjectProperties.class)
     @AutoConfigureWebClient(registerRestTemplate = true)
@@ -116,7 +152,11 @@ class ArticleManagementServiceTest {
             Long articleId = 1L;
             ArticleDto expectedArticle = createArticleDto("게시판", "글");
             server
+<<<<<<< HEAD
                     .expect(requestTo(projectProperties.board().url() + "/api/articles/" + articleId + "?projection=withUserAccount"))
+=======
+                    .expect(requestTo(projectProperties.board().url() + "/api/articles/" + articleId))
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
                     .andRespond(withSuccess(
                             mapper.writeValueAsString(expectedArticle),
                             MediaType.APPLICATION_JSON
@@ -169,6 +209,11 @@ class ArticleManagementServiceTest {
         private UserAccountDto createUserAccountDto() {
             return UserAccountDto.of(
                     "unoTest",
+<<<<<<< HEAD
+=======
+                    "pw",
+                    Set.of(RoleType.ADMIN),
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
                     "uno-test@email.com",
                     "uno-test",
                     "test memo"

@@ -1,7 +1,12 @@
 package com.example.boardadmin.controller;
 
+<<<<<<< HEAD
 import com.example.boardadmin.config.GlobalControllerConfig;
 import com.example.boardadmin.config.TestSecurityConfig;
+=======
+import com.example.boardadmin.config.SecurityConfig;
+import com.example.boardadmin.domain.constant.RoleType;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 import com.example.boardadmin.dto.ArticleDto;
 import com.example.boardadmin.dto.UserAccountDto;
 import com.example.boardadmin.service.ArticleManagementService;
@@ -17,6 +22,10 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Set;
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 
 import static org.mockito.BDDMockito.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
@@ -25,7 +34,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("컨트롤러 - 게시글 관리")
+<<<<<<< HEAD
 @Import({TestSecurityConfig.class, GlobalControllerConfig.class})
+=======
+@Import(SecurityConfig.class)
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
 @WebMvcTest(ArticleManagementController.class)
 class ArticleManagementControllerTest {
 
@@ -53,7 +66,10 @@ class ArticleManagementControllerTest {
         then(articleManagementService).should().getArticles();
     }
 
+<<<<<<< HEAD
     @WithMockUser(username = "tester", roles = "USER")
+=======
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
     @DisplayName("[data][GET] 게시글 1개 - 정상 호출")
     @Test
     void givenArticleId_whenRequestingArticle_thenReturnsArticle() throws Exception {
@@ -73,7 +89,10 @@ class ArticleManagementControllerTest {
         then(articleManagementService).should().getArticle(articleId);
     }
 
+<<<<<<< HEAD
     @WithMockUser(username = "tester", roles = "MANAGER")
+=======
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
     @DisplayName("[view][POST] 게시글 삭제 - 정상 호출")
     @Test
     void givenArticleId_whenRequestingDeletion_thenRedirectsToArticleManagementView() throws Exception {
@@ -83,8 +102,13 @@ class ArticleManagementControllerTest {
 
         // When & Then
         mvc.perform(
+<<<<<<< HEAD
                 post("/management/articles/" + articleId)
                         .with(csrf())
+=======
+                        post("/management/articles/" + articleId)
+                                .with(csrf())
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
                 )
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/management/articles"))
@@ -110,10 +134,19 @@ class ArticleManagementControllerTest {
     private UserAccountDto createUserAccountDto() {
         return UserAccountDto.of(
                 "unoTest",
+<<<<<<< HEAD
+=======
+                "pw",
+                Set.of(RoleType.ADMIN),
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
                 "uno-test@email.com",
                 "uno-test",
                 "test memo"
         );
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f

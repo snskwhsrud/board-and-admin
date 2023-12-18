@@ -11,7 +11,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
-public class AdminAccountController {
+public class AdminUserAccountController {
 
     private final AdminAccountService adminAccountService;
 

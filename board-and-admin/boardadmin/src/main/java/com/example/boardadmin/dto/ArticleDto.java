@@ -19,4 +19,8 @@ public record ArticleDto(
         return new ArticleDto(id, userAccount, title, content, hashtags, createdAt, createdBy, modifiedAt, modifiedBy);
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afe78be51f842943efb30446e0adf2625baf151f
