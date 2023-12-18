@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/board-and-admin.iml" filepath="$PROJECT_DIR$/.idea/board-and-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/board.iml" filepath="$PROJECT_DIR$/.idea/modules/board.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/board.main.iml" filepath="$PROJECT_DIR$/.idea/modules/board.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/board.test.iml" filepath="$PROJECT_DIR$/.idea/modules/board.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boardadmin.iml" filepath="$PROJECT_DIR$/.idea/modules/boardadmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boardadmin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/boardadmin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/boardadmin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/boardadmin.test.iml" />
     </modules>
   </component>
 </project>

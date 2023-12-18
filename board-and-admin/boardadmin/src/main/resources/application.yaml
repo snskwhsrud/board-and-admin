@@ -3,7 +3,7 @@ management.endpoints.web.exposure.include: "*"
 
 logging:
   level:
-    com.fastcampus.projectboardadmin: debug
+    com.example.boardadmin: debug
     org.springframework.web.servlet: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
     org.springframework.web.client.RestTemplate: debug
@@ -52,7 +52,7 @@ spring:
   datasource.url: ${JAWSDB_URL}
   jpa.hibernate.ddl-auto: create
 
-project.board.url: http://localhost:8080
+project.board.url: ${PROJECT_BOARD_URL}
 
 ---
 

@@ -7,9 +7,6 @@
   <attr sel="#layout-right-aside" th:replace="layouts/layout-right-aside :: aside" />
   <attr sel="#layout-footer" th:replace="layouts/layout-footer :: footer" />
   <attr sel="#layout-scripts" th:replace="layouts/layout-scripts :: script" />
-<<<<<<< Updated upstream
-</thlogic>
-=======
 
   <attr sel="#jsgrid-javascript" th:utext='|
     $(() => {
@@ -62,4 +59,3 @@
     });
   |'/>
 </thlogic>
->>>>>>> Stashed changes
